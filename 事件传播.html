@@ -1,0 +1,26 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+	<script type="text/javascript" src="jquery-2.2.3.min.js"></script>
+	<script type="text/javascript">
+		window.onload=function(){
+			var btn=document.getElementsByTagName("input")[0];
+			var p=document.getElementsByTagName("p")[0];
+			var i=1
+			do{
+				btn.addEventListener("click",function(){
+					p.innerHTML+='<br/>('+i++ +')'+this.nodeName
+				},false)
+				btn.removeEventListener("click",arguments.callee,false)
+				btn=btn.parentNode
+			}while(btn)
+		}
+	</script>
+		<input type="button" value="Event对象"></input>
+		<p>捕获型事件流传播过程：</p>
+</body>
+</html>

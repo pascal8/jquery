@@ -1,0 +1,26 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+	<script type="text/javascript" src="jquery-2.2.3.min.js"></script>
+	<script type="text/javascript">
+		$(function(){
+			$('<input type="button" value="第一个按钮"/><input type="button" value="第二个按钮"/><input type="button" value="删除按钮事件处理函数"/><input type="button" value="隐藏或显示文本"/>').appendTo($('body'));
+			$('input[type="button"]').eq(0).click(
+			function(){alert('是第一个按钮的事件处理函数')}).end().eq(1).click(function(){
+				$('input[type="button"]:eq(0)').trigger('click');
+			}).end().eq(2).click(function(){
+				$('input[type="button"]:eq(0)').unbind('click')
+			}).end().eq(3).toggle(function(){
+				$('.panel').show('slow')
+			},function(){
+				$('.panel').hide('slow')
+			})
+		})
+	</script>
+	<div class="panel">链式</div>
+</body>
+</html>

@@ -1,0 +1,25 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+	<script type="text/javascript" src="jquery-2.2.3.min.js"></script>
+	<script type="text/javascript">
+		$(function(){
+			$("input[type='button']").click(function(){
+				var i=0;
+				$("input[type='text']").each(function(){
+					i+=parseInt($(this).val())
+				})
+				$('label').text(i)
+			})
+			$('input:lt(2)').add('label').css('border','none').css('borderBottom','solid 1px navy').css('textAlign','center')
+			.css('width','3em').css({'width':'30px'})
+		})
+	</script>
+	<input type="text" value="" /> + <input type="text" value="" /> <input type="button" value="=" />
+	<label></label>
+</body>
+</html>
